@@ -32,7 +32,7 @@ public class LoginEdge {
 		// dc.setVersion("120.0");
 		dc.setPlatform(Platform.LINUX);
 
-		RemoteWebDriver driver = new RemoteWebDriver(new URL("http://YourIP:32000/wd/hub"), dc);
+		RemoteWebDriver driver = new RemoteWebDriver(new URL("http://YourIP:4444/wd/hub"), dc);
 
 		// ChromeDriver driver = new ChromeDriver();
 
@@ -42,18 +42,16 @@ public class LoginEdge {
 		// Maximize the browser
 		driver.manage().window().maximize();
 		// Step 3: Print the title --> getTitle
-				driver.findElement(By.id("username")).sendKeys("democsr");
+				driver.findElement(By.id("username")).sendKeys("DemoSalesManager");
 				System.out.println("The title is "+driver.getTitle());
 
 				Thread.sleep(5000);
 
 				// Step 3: Print the title --> getTitle
 				driver.findElement(By.id("password")).sendKeys("crmsfa");
-				Thread.sleep(5000);
 
 		// Click on login button
 		driver.findElement(By.className("decorativeSubmit")).click();
-		Thread.sleep(5000);
 
 		// Get the text of the element
 
@@ -115,6 +113,7 @@ public class LoginEdge {
 
 		String title2 = driver.getTitle();
 		System.out.println(title2);
+		driver.quit();
 	}
 
 }
